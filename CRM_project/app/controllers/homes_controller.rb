@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
   def index
-    @jobs=Job.where.not(jobs: {scheduled_date: nil}).references(:jobs)
+    @unscheduled_jobs=Job.where(jobs: {scheduled_date: nil}).references(:jobs)
+    @scheduled_jobs=Job.where.not(jobs: {scheduled_date: nil}).references(:jobs)
   end
 
   def new

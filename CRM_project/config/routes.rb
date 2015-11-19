@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :customers do
     resources :jobs
   end
+
+  get '/unscheduled_jobs', to: 'jobs#unscheduled_jobs'
+  get '/scheduled_jobs', to: 'jobs#scheduled_jobs'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

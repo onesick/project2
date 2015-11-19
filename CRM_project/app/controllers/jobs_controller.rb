@@ -35,6 +35,14 @@ class JobsController < ApplicationController
     redirect_to edit_customer_job_path(@customer, @job)
   end
 
+  def unscheduled_jobs
+    @jobs=Job.where(jobs: {scheduled_date: nil}).references(:jobs)
+  end
+
+  def scheduled_jobs
+    @jobs=Job.where.not(jobs: {scheduled_date: nil}).references(:jobs)
+  end
+
   private
   def jobs_params
     params.require(:job).permit(:technician, :brand, :model_num, :serial_num, :purchase_date, :scheduled_date,

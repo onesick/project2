@@ -1,0 +1,5 @@
+<% @jobs.each do |job| %>
+<ul>
+<li><%=link_to job.id, customer_job_path(job.customer_id, job) %></li>
+</ul>
+<% end %>
