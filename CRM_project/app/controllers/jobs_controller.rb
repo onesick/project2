@@ -18,8 +18,9 @@ class JobsController < ApplicationController
   end
 
   def show
+
     @customer=Customer.find(params[:customer_id])
-    @job=@customer.jobs.find(params[:id])
+    @job=Job.find(params[:id])
   end
 
   def edit

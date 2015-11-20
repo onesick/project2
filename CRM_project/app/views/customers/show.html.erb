@@ -1,3 +1,6 @@
 <%= render 'form' %>
 
 <%=link_to "create a job", new_customer_job_path(@customer) %>
+<% if @job %>
+  <%= link_to "show associated jobs", customer_jobs_path(@customer, @job) %>
+<% end %>

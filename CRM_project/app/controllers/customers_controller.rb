@@ -15,6 +15,9 @@ class CustomersController < ApplicationController
 
   def show
     @customer=Customer.find(params[:id])
+    if @customer.jobs
+      @job=@customer.jobs
+    end
   end
 
   def update
