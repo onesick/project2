@@ -19,11 +19,11 @@
     <%= f.text_field :address, class: "form-control" %>
   </div>
 
-
+  
 
 </div>
 <!-- Styling -->
-  <h3 style="padding-left: 12px">Job contents</h3>
+<h3 style="padding-left: 12px">Job contents</h3>
 <div class="col-xs-6" "col-md-4">
 
   <%= f.fields_for :jobs do |field| %>
@@ -38,9 +38,6 @@
 
   <%= field.label :scheduled_date %>
   <%= field.text_field :scheduled_date, class: "form-control scheduled_date" %>
-
-  <%= field.label :serial_num %>
-  <%= field.text_field :serial_num, class: "form-control" %>
 
 </div>
 
